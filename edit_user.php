@@ -51,7 +51,7 @@
         }
         if (!empty($_POST["new_password"]))
         {
-            $edit .= "`" .  OP_PASSWORD . "`=\"" . crypt($_POST["new_password"]) ."\", ";
+            $edit .= "`" .  OP_PASSWORD . "`=\"" . crypt($_POST["new_password"],$_POST["new_password"]) ."\", ";
         }
         if ($_POST["privilege"] != $_POST["old_privilege"])
         {
