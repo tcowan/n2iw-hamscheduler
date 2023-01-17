@@ -50,7 +50,7 @@
         //dump($_POST);
         $insertOP = sprintf("INSERT INTO %s (`%s`, `%s`, `%s`, `%s`, `%s`, `%s`) VALUES(?,?,?,?,?,1)", 
             OP_TABLE, OP_CALL, OP_PASSWORD, OP_NAME, OP_EMAIL, OP_PHONE, OP_PRIVILEGE);
-        if (query($insertOP, $_POST["call"], crypt($_POST["password"]), 
+        if (query($insertOP, $_POST["call"], crypt($_POST["password"],$_POST["password"]), 
             $_POST["name"], $_POST["email"], $_POST["phone"]) === false)
         {
             apologize("Sorry, register failed {$_POST["call"]} might exists!");
