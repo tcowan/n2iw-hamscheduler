@@ -39,7 +39,7 @@
         }
         
         $updateOP = sprintf("UPDATE %s SET %s=? WHERE %s=?", OP_TABLE, OP_PASSWORD, OP_ID);
-        if (query($updateOP, crypt($_POST["new_password"]), $_SESSION["id"])  === false)
+        if (query($updateOP, crypt($_POST["new_password"],$_POST["new_password"]), $_SESSION["id"])  === false)
         {
             apologize("Sorry, change failed!");
         }
