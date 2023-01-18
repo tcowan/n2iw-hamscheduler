@@ -28,7 +28,7 @@
             $op_id = $_SESSION["id"];
             $privilege = $_SESSION["privilege"];
         } else {
-            $op_id = 1;
+            $op_id = -1; 
             $privilege = 0;
         }
     ?>
