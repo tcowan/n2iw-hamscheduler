@@ -25,7 +25,8 @@
                             <td><a href="index.php">Home</a></td>
                             <?php if ( !isLogin() ): ?>
 			        <td style="font-weight:bold;background-color:teal">
-					<a href="https://form.jotform.com/223558129215052" style="color:white">Request Login</a>
+					<a href="#" style="color:white">Request Login</a>
+					<!-- UPDATE WITH HOW YOU WANT TO CAPTURE REQUESTS -->
 				</td>
                                 <td><a href="login.php">Login</a></td>
                             <?php else :?>
@@ -48,9 +49,13 @@
             </div>
             <div id="middle">
 		<?php 
-		// Second-tier links that do not need to be buttons
+	 	// Second-tier links that do not need to be buttons
 		?>
-		<p> <a href="https://vota.arrl.org/w1awPortable.php">General Information</a> | <a href="/Activators-r01.08.2022.pdf">Instructions for Activators (or prospective Activators)</a></p>
+		<p> <a href="https://vota.arrl.org/w1awPortable.php">General Information</a> | <a href="#">Instructions for Activators (or prospective Activators)</a></p>
+		    
+		<?php 
+	 	// Notification area... might be better calling as a require() to a different page to be edited somewhere else
+		?>
 		<p style="border:1px solid #000; background-color:#c0c0c0; width:400px;margin-left: auto; margin-right: auto;">Activators and Prospective Activators are invited to a <br>
 		<strong>Q&A Session with NY Coordination Team</strong><br /> on Sunday, January 22, 2023 at 6PM local <br />
 		<a href="https://us02web.zoom.us/meeting/register/tZAkc-2tqjsiHt3CUbOq-ZrkVNIU0kMHNSPw" style="font-weight:bold">Register for Zoom Meeting</a></p>
