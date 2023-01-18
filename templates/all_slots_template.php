@@ -1,5 +1,5 @@
 <div class="table" id="my_slots">
-<h1>Time Slots for <?= $call?></h1>
+<h1>All Claimed Timeslots</h1>
 <table>
     <tr>
         <th>UTC Date</th>
@@ -7,9 +7,12 @@
         <th>Local Time</th>
         <th>Band</th>
         <th>Mode</th>
+	<th>Callsign</th>
         <th>Action</th>
     </tr>
-    <?php foreach ($slots as $s): ?>
+    <?php foreach ($slots as $s): 
+		$c = query("SELECT callsign as c FROM `op` where id = ". $s["op"]);
+		$s["op"] = $c[0]["c"]; ?>
     <tr>
         <?php
             //dump($s["time"][0]);
@@ -33,6 +36,7 @@
         <td class="time"><?= $local_time_str?></td>
         <td><?= $s["band"]?></td>
         <td><?= $s["mode"]?></td>
+        <td><?= $s["op"]?></td>
         <td class="<?= $call == $_SESSION["call"] ? "my_slot" : "others_slot"?>"><form action="reserve.php" method="POST">
                 <input type="hidden" name="id" value="<?= $s["id"] ?>">
                 <input type="hidden" name="op" value="0">
@@ -46,6 +50,7 @@
 <script src='js/jquery-1.11.0.min.js'></script>
 <script src="js/confirm.js" type="text/javascript" charset="utf-8"></script>
 <br />
+
 
 <a href="javascript:history.go(-1);">Back</a>
 
