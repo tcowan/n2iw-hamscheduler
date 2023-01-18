@@ -20,6 +20,7 @@
     define("PASSWORD", "w1aw");
 
     // title for the operation
+    // limited HTML allowed (<br />) for newline
     define("TITLE", "2014 RDXA W1AW/2 Schedule");
     
     // how long a time slot should be (in whole hours and 24 can be divided by it)
